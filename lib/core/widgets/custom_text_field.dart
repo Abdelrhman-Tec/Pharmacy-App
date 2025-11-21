@@ -86,7 +86,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
             hintText: widget.hintText,
             hintStyle: TextStyle(color: AppColors.grey400, fontSize: 16.sp),
             filled: true,
-            fillColor: widget.fillColor ?? Colors.grey.shade100,
+            fillColor: widget.fillColor ?? AppColors.grey100,
             contentPadding: const .symmetric(vertical: 14, horizontal: 16),
             prefixIcon: widget.prefixIcon != null
                 ? Padding(
@@ -97,13 +97,13 @@ class _CustomTextFieldState extends State<CustomTextField> {
             border: OutlineInputBorder(
               borderRadius: .circular(widget.borderRadius),
               borderSide: BorderSide(
-                color: widget.borderColor ?? Colors.grey.shade400,
+                color: widget.borderColor ?? AppColors.grey400,
               ),
             ),
             enabledBorder: OutlineInputBorder(
               borderRadius: .circular(widget.borderRadius),
               borderSide: BorderSide(
-                color: widget.borderColor ?? Colors.grey.shade300,
+                color: widget.borderColor ?? AppColors.grey400,
               ),
             ),
             focusedBorder: OutlineInputBorder(
@@ -142,7 +142,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
         hintText: widget.hintText,
         hintStyle: TextStyle(color: AppColors.grey400, fontSize: 16.sp),
         filled: true,
-        fillColor: widget.fillColor ?? Colors.grey.shade100,
+        fillColor: widget.fillColor ?? AppColors.grey100,
         prefixIcon: widget.prefixIcon != null
             ? Icon(color: AppColors.grey400, widget.prefixIcon)
             : null,
@@ -166,13 +166,13 @@ class _CustomTextFieldState extends State<CustomTextField> {
         border: OutlineInputBorder(
           borderRadius: .circular(widget.borderRadius),
           borderSide: BorderSide(
-            color: widget.borderColor ?? Colors.grey.shade400,
+            color: widget.borderColor ?? AppColors.grey400,
           ),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: .circular(widget.borderRadius),
           borderSide: BorderSide(
-            color: widget.borderColor ?? Colors.grey.shade300,
+            color: widget.borderColor ?? AppColors.grey300,
           ),
         ),
         focusedBorder: OutlineInputBorder(
@@ -184,7 +184,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
         ),
         errorBorder: OutlineInputBorder(
           borderRadius: .circular(widget.borderRadius),
-          borderSide: const BorderSide(color: Colors.red),
+          borderSide: const BorderSide(color: AppColors.error),
         ),
       ),
     );
