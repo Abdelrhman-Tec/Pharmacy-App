@@ -5,6 +5,6 @@ class AppRoutes {
 
   // ==================== Auth Routes ====================
   static const String login = '/login';
-  static const String signup = '/register';
+  static const String register = '/register';
   static const String resetPassword = '/reset-password';
 }

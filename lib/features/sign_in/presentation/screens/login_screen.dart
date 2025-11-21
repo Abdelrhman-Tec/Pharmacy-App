@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pharmacy_app/features/auth/presentation/widgets/login_body.dart';
+import 'package:pharmacy_app/features/sign_in/presentation/widgets/login_body.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});

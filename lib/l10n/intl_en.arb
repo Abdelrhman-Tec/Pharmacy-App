@@ -31,8 +31,10 @@
   "countryAndCity": "Country and City",
   "phoneNumber": "Phone Number",
   "termsAgreement": "I agree to the terms and privacy policy",
-  "alreadyHaveAccount": "Already have an account?",
+  "alreadyHaveAccount": "Already have an account? ",
   "login": "Login",
   "forgotPassword": "Forgot Password?",
-  "loginToContinue": "Login to continue to your pharmacy"
+  "loginToContinue": "Login to continue to your pharmacy",
+  "myPharmcy" : "My Pharmacy"
+
 }

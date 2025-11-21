@@ -31,7 +31,10 @@ class AppLogo extends StatelessWidget {
             ),
           ],
         ),
-        child: Icon(icon, size: iconSize, color: Colors.white),
+        child: Padding(
+          padding: const .all(15),
+          child: Image.asset('assets/icons/pharmacy.png', fit: .contain),
+        ),
       ),
     );
   }

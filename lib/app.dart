@@ -7,14 +7,12 @@ import 'package:pharmacy_app/core/utils/app_colors.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:pharmacy_app/generated/l10n.dart';
 
-/// Main application widget
 class PharmacyApp extends StatelessWidget {
   const PharmacyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      // Design size (based on your design mockup)
       designSize: const Size(375, 812),
       minTextAdapt: true,
       splitScreenMode: true,

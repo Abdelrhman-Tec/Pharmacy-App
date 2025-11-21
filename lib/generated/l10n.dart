@@ -333,6 +333,11 @@ class S {
       args: [],
     );
   }
+
+  /// `My Pharmacy`
+  String get myPharmcy {
+    return Intl.message('My Pharmacy', name: 'myPharmcy', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

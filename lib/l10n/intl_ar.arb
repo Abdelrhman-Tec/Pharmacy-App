@@ -31,8 +31,9 @@
   "countryAndCity": "الدولة والمدينة",
   "phoneNumber": "رقم الجوال",
   "termsAgreement": "أوافق على الشروط البيانات والسياسة المحمية",
-  "alreadyHaveAccount": "لديك حساب بالفعل؟",
+  "alreadyHaveAccount": "لديك حساب بالفعل؟  ",
   "login": "تسجيل الدخول",
   "forgotPassword": "هل نسيت كلمة المرور؟",
-  "loginToContinue": "سجل الدخول للمتابعة الي صيدليتك"
+  "loginToContinue": "سجل الدخول للمتابعة الي صيدليتك",
+  "myPharmcy" : "صيدليتي"
 }

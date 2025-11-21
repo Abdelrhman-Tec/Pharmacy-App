@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_intl_phone_field/flutter_intl_phone_field.dart';
 import 'package:pharmacy_app/core/utils/app_colors.dart';
 
-/// A fully customizable TextFormField used across the app.
-/// Supports password visibility toggle, custom colors, icons, validation, and styles.
 class CustomTextField extends StatefulWidget {
   final TextEditingController? controller;
   final String hintText;
@@ -22,6 +21,8 @@ class CustomTextField extends StatefulWidget {
   final double borderRadius;
   final bool enabled;
   final int maxLines;
+  final bool isPhoneField;
+  final String initialCountryCode;
 
   const CustomTextField({
     super.key,
@@ -42,6 +43,8 @@ class CustomTextField extends StatefulWidget {
     this.borderRadius = 12,
     this.enabled = true,
     this.maxLines = 1,
+    this.isPhoneField = false,
+    this.initialCountryCode = "EG",
   });
 
   @override
@@ -59,6 +62,71 @@ class _CustomTextFieldState extends State<CustomTextField> {
 
   @override
   Widget build(BuildContext context) {
+    if (widget.isPhoneField) {
+      // Phone field with correct layout
+      return Directionality(
+        textDirection: .ltr,
+        child: IntlPhoneField(
+          controller: widget.controller,
+          initialCountryCode: widget.initialCountryCode,
+          disableLengthCheck: true,
+          enabled: widget.enabled,
+          validator: (phone) {
+            if (widget.validator != null) {
+              return widget.validator!(phone?.completeNumber ?? '');
+            }
+            return null;
+          },
+          onChanged: (phone) {
+            if (widget.onChanged != null) {
+              widget.onChanged!(phone.completeNumber);
+            }
+          },
+          decoration: InputDecoration(
+            hintText: widget.hintText,
+            hintStyle: TextStyle(color: AppColors.grey400, fontSize: 16.sp),
+            filled: true,
+            fillColor: widget.fillColor ?? Colors.grey.shade100,
+            contentPadding: const .symmetric(vertical: 14, horizontal: 16),
+            prefixIcon: widget.prefixIcon != null
+                ? Padding(
+                    padding: const .only(left: 8.0),
+                    child: Icon(widget.prefixIcon, color: AppColors.grey400),
+                  )
+                : null,
+            border: OutlineInputBorder(
+              borderRadius: .circular(widget.borderRadius),
+              borderSide: BorderSide(
+                color: widget.borderColor ?? Colors.grey.shade400,
+              ),
+            ),
+            enabledBorder: OutlineInputBorder(
+              borderRadius: .circular(widget.borderRadius),
+              borderSide: BorderSide(
+                color: widget.borderColor ?? Colors.grey.shade300,
+              ),
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderRadius: .circular(widget.borderRadius),
+              borderSide: BorderSide(
+                color: widget.borderColor ?? Theme.of(context).primaryColor,
+                width: 1.5,
+              ),
+            ),
+            errorBorder: OutlineInputBorder(
+              borderRadius: .circular(widget.borderRadius),
+              borderSide: const BorderSide(color: Colors.red),
+            ),
+          ),
+          flagsButtonMargin: const .only(right: 8),
+          showDropdownIcon: true,
+          dropdownIconPosition: .leading,
+          textAlign: .right,
+        ),
+      );
+    }
+
+    // Default TextFormField
     return TextFormField(
       controller: widget.controller,
       obscureText: _obscure,
@@ -94,31 +162,28 @@ class _CustomTextFieldState extends State<CustomTextField> {
                       onPressed: widget.onSuffixTap,
                     )
                   : null),
-        contentPadding: const EdgeInsets.symmetric(
-          vertical: 14,
-          horizontal: 16,
-        ),
+        contentPadding: const .symmetric(vertical: 14, horizontal: 16),
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(widget.borderRadius),
+          borderRadius: .circular(widget.borderRadius),
           borderSide: BorderSide(
             color: widget.borderColor ?? Colors.grey.shade400,
           ),
         ),
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(widget.borderRadius),
+          borderRadius: .circular(widget.borderRadius),
           borderSide: BorderSide(
             color: widget.borderColor ?? Colors.grey.shade300,
           ),
         ),
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(widget.borderRadius),
+          borderRadius: .circular(widget.borderRadius),
           borderSide: BorderSide(
             color: widget.borderColor ?? Theme.of(context).primaryColor,
             width: 1.5,
           ),
         ),
         errorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(widget.borderRadius),
+          borderRadius: .circular(widget.borderRadius),
           borderSide: const BorderSide(color: Colors.red),
         ),
       ),

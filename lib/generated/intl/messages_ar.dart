@@ -47,6 +47,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "loginToContinue": MessageLookupByLibrary.simpleMessage(
       "سجل الدخول للمتابعة الي صيدليتك",
     ),
+    "myPharmcy": MessageLookupByLibrary.simpleMessage("صيدليتي"),
     "offers": MessageLookupByLibrary.simpleMessage("العروض"),
     "orderDetails": MessageLookupByLibrary.simpleMessage("تفاصيل الطلب"),
     "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),

@@ -45,6 +45,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "loginToContinue": MessageLookupByLibrary.simpleMessage(
       "Login to continue to your pharmacy",
     ),
+    "myPharmcy": MessageLookupByLibrary.simpleMessage("My Pharmacy"),
     "offers": MessageLookupByLibrary.simpleMessage("Offers"),
     "orderDetails": MessageLookupByLibrary.simpleMessage("Order Details"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
