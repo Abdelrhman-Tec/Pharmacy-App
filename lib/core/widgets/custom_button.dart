@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-/// Custom button widget with consistent styling
 class CustomButton extends StatelessWidget {
   final String text;
   final VoidCallback? onPressed;
@@ -12,6 +11,7 @@ class CustomButton extends StatelessWidget {
   final double? height;
   final IconData? icon;
   final double borderRadius;
+  final Gradient? gradient;
 
   const CustomButton({
     super.key,
@@ -25,12 +25,11 @@ class CustomButton extends StatelessWidget {
     this.height,
     this.icon,
     this.borderRadius = 12,
+    this.gradient,
   });
 
   @override
   Widget build(BuildContext context) {
-    final defaultBackgroundColor =
-        backgroundColor ?? Theme.of(context).primaryColor;
     final defaultTextColor = textColor ?? Colors.white;
 
     if (isOutlined) {
@@ -40,33 +39,59 @@ class CustomButton extends StatelessWidget {
         child: OutlinedButton(
           onPressed: isLoading ? null : onPressed,
           style: OutlinedButton.styleFrom(
-            foregroundColor: defaultBackgroundColor,
-            side: BorderSide(color: defaultBackgroundColor, width: 2),
+            foregroundColor: backgroundColor ?? Theme.of(context).primaryColor,
+            side: BorderSide(
+              color: backgroundColor ?? Theme.of(context).primaryColor,
+              width: 2,
+            ),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(borderRadius),
             ),
           ),
-          child: _buildButtonChild(defaultBackgroundColor),
+          child: _buildButtonChild(defaultTextColor),
         ),
       );
     }
 
-    return SizedBox(
-      width: width,
-      height: height ?? 48,
-      child: ElevatedButton(
-        onPressed: isLoading ? null : onPressed,
-        style: ElevatedButton.styleFrom(
-          backgroundColor: defaultBackgroundColor,
-          foregroundColor: defaultTextColor,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(borderRadius),
-          ),
-          elevation: 2,
+    final buttonChild = _buildButtonChild(defaultTextColor);
+    final button = ElevatedButton(
+      onPressed: isLoading ? null : onPressed,
+      style: ElevatedButton.styleFrom(
+        backgroundColor: gradient == null
+            ? backgroundColor ?? Theme.of(context).primaryColor
+            : null,
+        foregroundColor: defaultTextColor,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(borderRadius),
         ),
-        child: _buildButtonChild(defaultTextColor),
+        elevation: 2,
       ),
+      child: buttonChild,
     );
+
+    if (gradient != null) {
+      return Container(
+        width: width,
+        height: height ?? 48,
+        decoration: BoxDecoration(
+          gradient: gradient,
+          borderRadius: BorderRadius.circular(borderRadius),
+        ),
+        child: ElevatedButton(
+          onPressed: isLoading ? null : onPressed,
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.transparent,
+            shadowColor: Colors.transparent,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(borderRadius),
+            ),
+          ),
+          child: buttonChild,
+        ),
+      );
+    }
+
+    return SizedBox(width: width, height: height ?? 48, child: button);
   }
 
   Widget _buildButtonChild(Color color) {
@@ -85,11 +110,15 @@ class CustomButton extends StatelessWidget {
       return Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(icon, size: 20),
+          Icon(icon, size: 20, color: color),
           const SizedBox(width: 8),
           Text(
             text,
-            style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+            style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.w600,
+              color: color,
+            ),
           ),
         ],
       );
@@ -97,76 +126,7 @@ class CustomButton extends StatelessWidget {
 
     return Text(
       text,
-      style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
-    );
-  }
-}
-
-/// Icon button with consistent styling
-class CustomIconButton extends StatelessWidget {
-  final IconData icon;
-  final VoidCallback? onPressed;
-  final Color? color;
-  final Color? backgroundColor;
-  final double size;
-  final String? tooltip;
-
-  const CustomIconButton({
-    super.key,
-    required this.icon,
-    this.onPressed,
-    this.color,
-    this.backgroundColor,
-    this.size = 24,
-    this.tooltip,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    final button = IconButton(
-      icon: Icon(icon, size: size),
-      onPressed: onPressed,
-      color: color ?? Theme.of(context).iconTheme.color,
-      style: backgroundColor != null
-          ? IconButton.styleFrom(backgroundColor: backgroundColor)
-          : null,
-    );
-
-    if (tooltip != null) {
-      return Tooltip(message: tooltip!, child: button);
-    }
-
-    return button;
-  }
-}
-
-/// Text button with consistent styling
-class CustomTextButton extends StatelessWidget {
-  final String text;
-  final VoidCallback? onPressed;
-  final Color? color;
-  final double fontSize;
-
-  const CustomTextButton({
-    super.key,
-    required this.text,
-    this.onPressed,
-    this.color,
-    this.fontSize = 14,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return TextButton(
-      onPressed: onPressed,
-      child: Text(
-        text,
-        style: TextStyle(
-          color: color ?? Theme.of(context).primaryColor,
-          fontSize: fontSize,
-          fontWeight: FontWeight.w500,
-        ),
-      ),
+      style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600, color: color),
     );
   }
 }

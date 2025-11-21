@@ -10,6 +10,7 @@ class AppColors {
   static const Color primaryGreen = Color(0xFF2E7D32);
   static const Color primaryGreenLight = Color(0xFF60AD5E);
   static const Color primaryGreenDark = Color(0xFF005005);
+  static const Color scaffoldBackground = Color(0xffF6F8F6);
 
   /// White color
   static const Color white = Color(0xFFFFFFFF);
@@ -56,4 +57,10 @@ class AppColors {
   static const Color textDisabled = Color(0xFFBDBDBD);
   static const Color textPrimaryDark = Color(0xFFFFFFFF);
   static const Color textSecondaryDark = Color(0xFFB0B0B0);
+
+  static LinearGradient get gradient => LinearGradient(
+    colors: [primaryGreen, primaryGreenLight],
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+  );
 }
