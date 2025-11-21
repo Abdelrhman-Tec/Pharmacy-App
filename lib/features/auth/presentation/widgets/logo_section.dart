@@ -6,6 +6,6 @@ class LogoSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppLogo(size: 100, iconSize: 50);
+    return const AppLogo(size: 100, iconSize: 50);
   }
 }

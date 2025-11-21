@@ -14,7 +14,7 @@ class WelcomeText extends StatelessWidget {
           S.current.welcomeMessage,
           style: AppTextStyle.fontSize30WeightBold,
         ),
-        Gap(5),
+        const Gap(5),
         Text(
           S.current.loginToContinue,
           style: AppTextStyle.fontSize18WeightNormal,
