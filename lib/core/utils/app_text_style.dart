@@ -11,4 +11,8 @@ class AppTextStyle {
 
   static TextStyle get fontSize14WeightNormal =>
       TextStyle(fontSize: 14.sp, color: AppColors.primaryGreen);
+
+  static TextStyle get fontSize20WeightBold=>
+      TextStyle(fontSize: 20.sp, color: AppColors.black,fontWeight: .bold);
+
 }

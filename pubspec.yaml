@@ -37,6 +37,7 @@ flutter:
 
   assets:
     - assets/icons/
+    - assets/products_image/
 
   # Custom Fonts
   fonts:
