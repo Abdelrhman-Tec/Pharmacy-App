@@ -24,9 +24,10 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "addToCart": MessageLookupByLibrary.simpleMessage("أضف إلى السلة"),
     "alreadyHaveAccount": MessageLookupByLibrary.simpleMessage(
-      "لديك حساب بالفعل؟",
+      "لديك حساب بالفعل؟  ",
     ),
     "cardHolderName": MessageLookupByLibrary.simpleMessage("اسم حامل البطاقة"),
+    "categories": MessageLookupByLibrary.simpleMessage("التصنيفات"),
     "confirmOrder": MessageLookupByLibrary.simpleMessage("تأكيد الطلب"),
     "confirmPassword": MessageLookupByLibrary.simpleMessage(
       "تأكيد كلمة المرور",

@@ -8,7 +8,7 @@ class AppColors {
   // ==================== Primary Colors ====================
   /// Main green color for pharmacy theme
   static const Color primaryGreen = Color(0xFF4CAF50);
-  static const Color primaryGreenLight = Color(0xFF81C784);
+  static const Color primaryGreenLight = Color(0xFFA7DAAA);
 
   static const Color primaryGreenDark = Color(0xFF005005);
   static const Color scaffoldBackground = Color(0xffF6F8F6);

@@ -299,10 +299,10 @@ class S {
     );
   }
 
-  /// `Already have an account?`
+  /// `Already have an account? `
   String get alreadyHaveAccount {
     return Intl.message(
-      'Already have an account?',
+      'Already have an account? ',
       name: 'alreadyHaveAccount',
       desc: '',
       args: [],
@@ -337,6 +337,11 @@ class S {
   /// `My Pharmacy`
   String get myPharmcy {
     return Intl.message('My Pharmacy', name: 'myPharmcy', desc: '', args: []);
+  }
+
+  /// `Categories`
+  String get categories {
+    return Intl.message('Categories', name: 'categories', desc: '', args: []);
   }
 }
 
