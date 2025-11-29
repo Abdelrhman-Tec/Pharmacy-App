@@ -9,4 +9,4 @@ export 'package:pharmacy_app/features/home/presentation/widgets/home_top_bar.dar
 export 'package:pharmacy_app/features/home/presentation/widgets/section_title.dart';
 export 'package:pharmacy_app/generated/l10n.dart';
 export '../widgets/home_body.dart';
-export '../../data/category_model.dart';
+export '../../data/models/category_model.dart';

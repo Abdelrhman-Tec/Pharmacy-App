@@ -1,3 +1,4 @@
+import 'package:pharmacy_app/features/home/presentation/widgets/home_appbar.dart';
 import 'package:pharmacy_app/features/home/presentation/widgets/index.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -5,6 +6,6 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: HomeBody());
+    return Scaffold(appBar: HomeAppBar(), body: HomeBody());
   }
 }

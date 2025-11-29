@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
-import 'package:pharmacy_app/features/home/data/category_model.dart';
+import 'package:pharmacy_app/features/home/data/models/category_model.dart';
 import 'package:pharmacy_app/features/home/presentation/widgets/category_item.dart';
 
 class CategoryListView extends StatelessWidget {

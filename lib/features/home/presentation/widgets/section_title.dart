@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pharmacy_app/core/utils/app_text_style.dart';
 
 class SectionTitle extends StatelessWidget {
@@ -10,7 +11,10 @@ class SectionTitle extends StatelessWidget {
     return SizedBox(
       width: .infinity,
       height: 50,
-      child: Text(title, style: AppTextStyle.fontSize30WeightBold),
+      child: Text(
+        title,
+        style: AppTextStyle.fontSize30WeightBold.copyWith(fontSize: 24.sp),
+      ),
     );
   }
 }
