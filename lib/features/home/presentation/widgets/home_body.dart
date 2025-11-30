@@ -12,15 +12,15 @@ class HomeBody extends StatelessWidget {
       child: SafeArea(
         child: Column(
           children: [
-            const Gap(30),
+            const Gap(10),
             SectionTitle(title: S.current.categories).paddingSymmetric(h: 20),
-            const Gap(15),
+            const Gap(10),
             CategoryListView(categories: CategoryModel.categories),
-            const Gap(15),
+            const Gap(20),
             BannersListView(),
             const Gap(15),
             SectionTitle(title: S.current.products).paddingSymmetric(h: 20),
-            const Gap(15),
+            const Gap(4),
             ProductListView(),
           ],
         ),
