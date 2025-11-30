@@ -9,7 +9,7 @@ class ProductListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 300.h,
+      height: 245.h,
       child: ListView.separated(
         scrollDirection: .horizontal,
         physics: BouncingScrollPhysics(),

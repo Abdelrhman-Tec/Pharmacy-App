@@ -22,7 +22,6 @@ class HomeBody extends StatelessWidget {
             SectionTitle(title: S.current.products).paddingSymmetric(h: 20),
             const Gap(15),
             ProductListView(),
-            const Gap(100),
           ],
         ),
       ),

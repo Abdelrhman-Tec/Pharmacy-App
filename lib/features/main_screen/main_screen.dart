@@ -59,7 +59,7 @@ class _MainScreenState extends State<MainScreen> {
             iconSize: 28.sp,
             items: [
               _navItem(Iconsax.home, "الرئيسية"),
-              _navItem(Iconsax.box, "المنتجات"),
+              _navItem(Iconsax.receipt, "الطلبات"),
               _navItem(Iconsax.shopping_cart, "السلة"),
               _navItem(Iconsax.user, "الملف الشخصي"),
             ],
