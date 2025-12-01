@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pharmacy_app/core/helpers/navigation.dart';
 import 'package:pharmacy_app/core/routing/routes.dart';
 import 'package:pharmacy_app/core/utils/app_colors.dart';
@@ -12,12 +13,15 @@ class LoginButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomButton(
-      width: double.infinity,
-      height: 60,
+      width: .infinity,
+      height: 60.h,
       text: S.current.login,
       gradient: AppColors.gradient,
       onPressed: () {
-        context.pushReplacementNamed(AppRoutes.home);
+        context.pushNamedAndRemoveUntil(
+          AppRoutes.mainScreen,
+          predicate: (route) => false,
+        );
       },
     ).animate(
       effects: [

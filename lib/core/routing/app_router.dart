@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pharmacy_app/core/routing/routes.dart';
 import 'package:pharmacy_app/features/main_screen/main_screen.dart';
+import 'package:pharmacy_app/features/product_details/presentation/screens/product_details_screen.dart';
 import 'package:pharmacy_app/features/sign_in/presentation/screens/login_screen.dart';
 import 'package:pharmacy_app/features/sign_up/presentation/screens/register_screen.dart';
 
@@ -13,6 +14,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const RegisterScreen());
       case AppRoutes.mainScreen:
         return MaterialPageRoute(builder: (_) => const MainScreen());
+      case AppRoutes.productDetails:
+        return MaterialPageRoute(builder: (_) => const ProductDetailsScreen());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(

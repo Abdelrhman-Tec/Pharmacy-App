@@ -1,4 +1,5 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:pharmacy_app/core/routing/routes.dart';
 import 'package:pharmacy_app/features/home/data/models/product_model.dart';
 import 'package:pharmacy_app/features/home/presentation/widgets/index.dart';
 import 'package:pharmacy_app/features/home/presentation/widgets/product_card.dart';
@@ -24,6 +25,9 @@ class ProductListView extends StatelessWidget {
             imagePath: product.imagePath,
             quantity: product.quantity,
             price: product.price,
+            ontap: (){
+              context.pushNamed(AppRoutes.productDetails);
+            }
           );
         },
       ),
