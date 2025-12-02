@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:pharmacy_app/features/home/data/models/category_model.dart';
@@ -22,7 +23,10 @@ class CategoryListView extends StatelessWidget {
         separatorBuilder: (context, index) => const Gap(16),
         itemBuilder: (context, index) {
           final category = categories[index];
-          return CategoryItem(title: category.title, image: category.image);
+          return CategoryItem(title: category.title, image: category.image)
+              .animate(delay: (index * 100).ms)
+              .fadeIn(duration: 700.ms)
+              .slideY(begin: 0.2, duration: 400.ms, curve: Curves.easeOut);
         },
       ),
     );

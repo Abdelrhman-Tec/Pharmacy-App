@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:pharmacy_app/core/utils/app_colors.dart';
 import 'package:pharmacy_app/features/home/presentation/widgets/index.dart';
 
@@ -23,7 +24,15 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
             child: Column(
               mainAxisAlignment: .end,
               children: [
-                const HomeTopBar().paddingSymmetric(h: 20),
+                const HomeTopBar()
+                    .paddingSymmetric(h: 20)
+                    .animate(delay: (0 * 100).ms)
+                    .fadeIn(duration: 700.ms)
+                    .slideY(
+                      begin: 0.2,
+                      duration: 400.ms,
+                      curve: Curves.easeOut,
+                    ),
                 const Gap(20),
                 HomeSearchBar().paddingSymmetric(h: 20),
                 const Gap(30),

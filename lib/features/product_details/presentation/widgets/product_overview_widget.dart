@@ -19,7 +19,7 @@ class ProductOverviewWidget extends StatelessWidget {
       margin: EdgeInsets.symmetric(horizontal: 16.w),
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(20.r),
+        borderRadius: BorderRadius.circular(10.r),
         boxShadow: [
           BoxShadow(
             color: AppColors.black.withValues(alpha: 0.04),

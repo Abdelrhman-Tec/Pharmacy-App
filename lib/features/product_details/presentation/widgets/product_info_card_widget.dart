@@ -1,3 +1,4 @@
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pharmacy_app/core/utils/app_colors.dart';
 import 'package:pharmacy_app/core/utils/app_text_style.dart';
@@ -23,7 +24,7 @@ class ProductInfoCardWidget extends StatelessWidget {
       padding: EdgeInsets.all(20.w),
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(20.r),
+        borderRadius: BorderRadius.circular(10.r),
         boxShadow: [
           BoxShadow(
             color: AppColors.black.withValues(alpha: 0.04),
@@ -32,58 +33,67 @@ class ProductInfoCardWidget extends StatelessWidget {
           ),
         ],
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            name,
-            style: AppTextStyle.fontSize30WeightBold.copyWith(height: 1.2),
-          ),
-          const Gap(8),
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
-            decoration: BoxDecoration(
-              color: AppColors.primaryGreen.withValues(alpha: 0.1),
-              borderRadius: BorderRadius.circular(8.r),
-            ),
-            child: Text(
-              subtitle,
-              style: AppTextStyle.fontSize18WeightNormal.copyWith(
-                color: AppColors.primaryGreen,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-          ),
-          const Gap(24),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Column(
+      child:
+          Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'السعر',
-                    style: TextStyle(
-                      fontSize: 14.sp,
-                      color: AppColors.grey600,
-                      fontWeight: FontWeight.w500,
+                    name,
+                    style: AppTextStyle.fontSize30WeightBold.copyWith(
+                      height: 1.2,
                     ),
                   ),
-                  const Gap(4),
-                  Text(
-                    '${price.toStringAsFixed(2)} ر.س',
-                    style: AppTextStyle.fontSize30WeightBold.copyWith(
-                      color: AppColors.primaryGreen,
+                  const Gap(8),
+                  Container(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 12.w,
+                      vertical: 6.h,
                     ),
+                    decoration: BoxDecoration(
+                      color: AppColors.primaryGreen.withValues(alpha: 0.1),
+                      borderRadius: BorderRadius.circular(8.r),
+                    ),
+                    child: Text(
+                      subtitle,
+                      style: AppTextStyle.fontSize18WeightNormal.copyWith(
+                        color: AppColors.primaryGreen,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ),
+                  const Gap(24),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'السعر',
+                            style: TextStyle(
+                              fontSize: 14.sp,
+                              color: AppColors.grey600,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          const Gap(4),
+                          Text(
+                            '${price.toStringAsFixed(2)} ر.س',
+                            style: AppTextStyle.fontSize30WeightBold.copyWith(
+                              color: AppColors.primaryGreen,
+                            ),
+                          ),
+                        ],
+                      ),
+                      const ProductCounterWidget(),
+                    ],
                   ),
                 ],
-              ),
-              const ProductCounterWidget(),
-            ],
-          ),
-        ],
-      ),
+              )
+              .animate(delay: (0 * 100).ms)
+              .fadeIn(duration: 700.ms)
+              .slideY(begin: 0.2, duration: 400.ms, curve: Curves.easeOut),
     );
   }
 }
