@@ -39,6 +39,7 @@ class CustomButton extends StatelessWidget {
         child: OutlinedButton(
           onPressed: isLoading ? null : onPressed,
           style: OutlinedButton.styleFrom(
+            shadowColor: Colors.transparent,
             foregroundColor: backgroundColor ?? Theme.of(context).primaryColor,
             side: BorderSide(
               color: backgroundColor ?? Theme.of(context).primaryColor,

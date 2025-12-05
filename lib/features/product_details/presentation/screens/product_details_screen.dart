@@ -13,7 +13,7 @@ class ProductDetailsScreen extends StatelessWidget {
       appBar: CustomAppBar(title: S.current.productDetails),
       body: ProductDetailsBody(
         productName: 'بنادول اكسترا',
-        productSubtitle: 'مسكن للآلام وخافض للحرارة',
+        productDescription: 'مسكن للالم وخافض للحرارة',
         productImagePath: 'assets/products_image/الادوية.png',
         productPrice: 50.0,
       ),

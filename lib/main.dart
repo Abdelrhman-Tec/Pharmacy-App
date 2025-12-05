@@ -5,7 +5,6 @@ import 'core/utils/logger.dart';
 import 'app.dart';
 
 void main() async {
-  // Ensure Flutter is initialized
   WidgetsFlutterBinding.ensureInitialized();
 
   //Lock the app orientation to portrait only

@@ -7,13 +7,13 @@ import 'package:pharmacy_app/features/product_details/presentation/widgets/produ
 
 class ProductInfoCardWidget extends StatelessWidget {
   final String name;
-  final String subtitle;
+  final String description;
   final double price;
 
   const ProductInfoCardWidget({
     super.key,
     required this.name,
-    required this.subtitle,
+    required this.description,
     required this.price,
   });
 
@@ -43,23 +43,22 @@ class ProductInfoCardWidget extends StatelessWidget {
                       height: 1.2,
                     ),
                   ),
-                  const Gap(8),
-                  Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 12.w,
-                      vertical: 6.h,
+                  const Gap(20),
+                  Text(
+                    'الوصف',
+                    style: AppTextStyle.fontSize18WeightNormal.copyWith(
+                      color: AppColors.grey800,
+                      fontWeight: FontWeight.w600,
                     ),
-                    decoration: BoxDecoration(
-                      color: AppColors.primaryGreen.withValues(alpha: 0.1),
-                      borderRadius: BorderRadius.circular(8.r),
+                  ),
+                  const Gap(10),
+                  Text(
+                    description,
+                    style: AppTextStyle.fontSize14WeightNormal.copyWith(
+                      color: AppColors.grey400,
+                      height: 1.5,
                     ),
-                    child: Text(
-                      subtitle,
-                      style: AppTextStyle.fontSize18WeightNormal.copyWith(
-                        color: AppColors.primaryGreen,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
+                    textAlign: TextAlign.justify,
                   ),
                   const Gap(24),
                   Row(

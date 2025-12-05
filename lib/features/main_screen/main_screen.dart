@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 import 'package:pharmacy_app/core/utils/app_colors.dart';
+import 'package:pharmacy_app/features/cart/presentation/screens/cart_screen.dart';
 import 'package:pharmacy_app/features/home/presentation/screens/home_screen.dart';
+import 'package:pharmacy_app/features/orders/presentation/screens/orders_screen.dart';
+import 'package:pharmacy_app/features/profile/presentation/screens/profile_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -16,9 +19,9 @@ class _MainScreenState extends State<MainScreen> {
 
   late final List<Widget> _screens = [
     HomeScreen(),
-    PlaceholderScreen(title: "المنتجات"),
-    PlaceholderScreen(title: "السلة"),
-    PlaceholderScreen(title: "الملف الشخصي"),
+    OrdersScreen(),
+    CartScreen(),
+    ProfileScreen(),
   ];
 
   void _onItemTapped(int index) {

@@ -1,11 +1,11 @@
 import 'dart:ui';
-
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:pharmacy_app/core/utils/app_colors.dart';
 import 'package:pharmacy_app/features/home/presentation/widgets/index.dart';
 
 class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const HomeAppBar({super.key});
+  final String locationPlaceholder;
+  const HomeAppBar({super.key, required this.locationPlaceholder});
 
   @override
   Widget build(BuildContext context) {
@@ -18,13 +18,13 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
       flexibleSpace: ClipRRect(
         borderRadius: .vertical(bottom: .circular(50)),
         child: BackdropFilter(
-          filter: ImageFilter.blur(sigmaX: 10, sigmaY: 300),
+          filter: ImageFilter.blur(sigmaX: 10, sigmaY: 50),
           child: Container(
-            color: AppColors.scaffoldBackground.withValues(alpha: 0.7),
+            color: AppColors.scaffoldBackground.withValues(alpha: 0.2),
             child: Column(
               mainAxisAlignment: .end,
               children: [
-                const HomeTopBar()
+                HomeTopBar(locationPlaceholder: locationPlaceholder)
                     .paddingSymmetric(h: 20)
                     .animate(delay: (0 * 100).ms)
                     .fadeIn(duration: 700.ms)

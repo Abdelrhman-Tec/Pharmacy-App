@@ -9,4 +9,5 @@ class AppRoutes {
   static const String resetPassword = '/reset-password';
   static const String mainScreen = '/main_screen';
   static const String productDetails = "/product_details";
+  static const String categoryScreen = "/category_screen";
 }

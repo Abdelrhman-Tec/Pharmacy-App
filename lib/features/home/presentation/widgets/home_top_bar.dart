@@ -5,7 +5,8 @@ import 'package:pharmacy_app/core/utils/app_colors.dart';
 import 'package:pharmacy_app/core/utils/app_text_style.dart';
 
 class HomeTopBar extends StatelessWidget {
-  const HomeTopBar({super.key});
+  final String locationPlaceholder;
+  const HomeTopBar({super.key, required this.locationPlaceholder});
 
   @override
   Widget build(BuildContext context) {
@@ -21,11 +22,29 @@ class HomeTopBar extends StatelessWidget {
           ),
         ),
         const Gap(10),
-        Text(
-          'عبدالرحمن ندا',
-          style: AppTextStyle.fontSize18WeightNormal.copyWith(
-            fontWeight: FontWeight.bold,
-            color: AppColors.black,
+        Expanded(
+          child: Column(
+            crossAxisAlignment: .start,
+            children: [
+              const Gap(10),
+              Text(
+                'عبدالرحمن ندا',
+                style: AppTextStyle.fontSize18WeightNormal.copyWith(
+                  fontWeight: FontWeight.bold,
+                  color: AppColors.black,
+                ),
+              ),
+              const Gap(5),
+              Text(
+                maxLines: 1,
+                overflow: .ellipsis,
+                ' العنوان : $locationPlaceholder',
+                style: AppTextStyle.fontSize14WeightNormal.copyWith(
+                  fontWeight: FontWeight.bold,
+                  color: AppColors.grey400,
+                ),
+              ),
+            ],
           ),
         ),
       ],

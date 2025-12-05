@@ -44,6 +44,8 @@ dependencies:
     sdk: flutter
   dio: ^5.9.0
   photo_view: ^0.15.0
+  geolocator: ^14.0.2
+  geocoding: ^4.0.0
 
 # Dev Dependencies
 dev_dependencies:
@@ -60,6 +62,7 @@ flutter:
     - assets/icons/
     - assets/products_image/
     - assets/banners/
+    - assets/images/
 
   fonts:
     - family: CairoBold

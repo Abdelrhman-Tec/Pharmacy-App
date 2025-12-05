@@ -20,7 +20,6 @@ class ProductListView extends StatelessWidget {
         separatorBuilder: (context, index) => const Gap(15),
         itemBuilder: (context, index) {
           final product = ProductModel.products[index];
-
           return ProductCard(
                 title: product.title,
                 imagePath: product.imagePath,
