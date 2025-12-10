@@ -10,29 +10,33 @@ class LoginForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        CustomTextField(
-          fillColor: AppColors.white,
-          hintText: S.current.email,
-          prefixIcon: Icons.email_outlined,
-        ),
-        const Gap(20),
-        CustomTextField(
-          fillColor: AppColors.white,
-          hintText: S.current.password,
-          isPassword: true,
-          prefixIcon: Icons.lock_outline,
-        ),
-        const Gap(20),
-        Align(
-          alignment: AlignmentDirectional.centerEnd,
-          child: Text(
-            S.current.forgotPassword,
-            style: AppTextStyle.fontSize14WeightNormal,
+    return 
+       Column(
+        children: [
+          CustomTextField(
+            fillColor: AppColors.white,
+            hintText: S.current.email,
+            prefixIcon: Icons.email_outlined,
+
           ),
-        ),
-      ],
+          const Gap(20),
+          CustomTextField(
+
+            fillColor: AppColors.white,
+            hintText: S.current.password,
+            isPassword: true,
+            prefixIcon: Icons.lock_outline,
+          ),
+          const Gap(20),
+          Align(
+            alignment: AlignmentDirectional.centerEnd,
+            child: Text(
+              S.current.forgotPassword,
+              style: AppTextStyle.fontSize14WeightNormal,
+            ),
+          ),
+        ],
+      
     );
   }
 }

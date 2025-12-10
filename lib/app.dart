@@ -24,7 +24,7 @@ class PharmacyApp extends StatelessWidget {
             scaffoldBackgroundColor: AppColors.scaffoldBackground,
             textTheme: GoogleFonts.cairoTextTheme(),
           ),
-          initialRoute: AppRoutes.login,
+          initialRoute: AppRoutes.mainScreen,
           onGenerateRoute: (settings) {
             return AppRouter().generateRoute(settings);
           },

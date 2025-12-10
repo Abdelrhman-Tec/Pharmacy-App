@@ -1,3 +1,4 @@
+import 'package:pharmacy_app/features/home/data/models/category_model.dart';
 import 'package:pharmacy_app/features/home/presentation/widgets/index.dart';
 import 'package:pharmacy_app/features/home/presentation/widgets/product_list_view.dart';
 import 'bannersListView.dart';

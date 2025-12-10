@@ -10,11 +10,11 @@ class AppRouter {
   Route generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case AppRoutes.login:
-        return MaterialPageRoute(builder: (_) => const LoginScreen());
+        return MaterialPageRoute(builder: (context) => LoginScreen());
       case AppRoutes.register:
         return MaterialPageRoute(builder: (_) => const RegisterScreen());
       case AppRoutes.mainScreen:
-        return MaterialPageRoute(builder: (_) => const MainScreen());
+        return MaterialPageRoute(builder: (_) => MainScreen());
       case AppRoutes.productDetails:
         return MaterialPageRoute(builder: (_) => const ProductDetailsScreen());
       case AppRoutes.categoryScreen:

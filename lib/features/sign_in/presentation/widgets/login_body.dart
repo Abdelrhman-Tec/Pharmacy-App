@@ -15,7 +15,7 @@ class LoginBody extends StatelessWidget {
     return SingleChildScrollView(
       child: SafeArea(
         child: Padding(
-          padding:.symmetric(horizontal: 20.w),
+          padding: .symmetric(horizontal: 20.w),
           child: Column(
             children: const [
               Gap(100),

@@ -60,7 +60,7 @@ class CategoryItem extends StatelessWidget {
                     left: 0,
                     right: 0,
                     bottom: 0,
-                    child: Image.asset(image, fit: .contain),
+                    child: Image.network(image, fit: .contain),
                   ),
                 ],
               ),

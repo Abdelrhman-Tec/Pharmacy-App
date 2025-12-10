@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:pharmacy_app/core/helpers/navigation.dart';
-import 'package:pharmacy_app/core/routing/routes.dart';
 import 'package:pharmacy_app/core/utils/app_colors.dart';
 import 'package:pharmacy_app/core/widgets/custom_button.dart';
 import 'package:pharmacy_app/generated/l10n.dart';
@@ -17,12 +15,7 @@ class LoginButton extends StatelessWidget {
       height: 60.h,
       text: S.current.login,
       gradient: AppColors.gradient,
-      onPressed: () {
-        context.pushNamedAndRemoveUntil(
-          AppRoutes.mainScreen,
-          predicate: (route) => false,
-        );
-      },
+      onPressed: (){},
     ).animate(
       effects: [
         FadeEffect(duration: 500.ms),
@@ -42,3 +35,5 @@ class LoginButton extends StatelessWidget {
     );
   }
 }
+
+
