@@ -4,6 +4,7 @@ import 'package:gap/gap.dart';
 import 'package:pharmacy_app/core/helpers/navigation.dart';
 import 'package:pharmacy_app/core/routing/routes.dart';
 import 'package:pharmacy_app/features/sign_up/presentation/widgets/already_have_account_text.dart';
+import 'package:pharmacy_app/features/sign_up/presentation/widgets/register_bloc_listener.dart';
 import 'package:pharmacy_app/features/sign_up/presentation/widgets/register_button.dart';
 import 'package:pharmacy_app/features/sign_up/presentation/widgets/register_forms.dart';
 import 'package:pharmacy_app/features/sign_up/presentation/widgets/register_title_text.dart';
@@ -32,6 +33,7 @@ class RegisterBody extends StatelessWidget {
               AlreadyHaveAccountText(
                 onLoginTap: () => context.pushNamed(AppRoutes.login),
               ),
+              const RegisterBlocListener()
             ],
           ),
         ),

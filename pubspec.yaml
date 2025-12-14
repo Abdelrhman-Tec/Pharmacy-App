@@ -39,6 +39,16 @@ dependencies:
   flutter_form_builder: ^10.2.0
   flutter_intl_phone_field: ^0.0.7
 
+  # Networking 
+  freezed: ^3.2.0
+  build_runner: ^2.6.0
+  json_serializable: ^6.11.1
+  json_annotation: ^4.9.0
+  freezed_annotation: ^3.1.0
+  retrofit: ^4.6.0
+  retrofit_generator: ^10.0.0
+  get_it: ^9.2.0
+
   # Localization
   flutter_localizations:
     sdk: flutter
@@ -48,6 +58,7 @@ dependencies:
   geocoding: ^4.0.0
   pretty_dio_logger: ^1.4.0
   flutter_bloc: ^9.1.1
+  flutter_secure_storage: ^10.0.0
 
 # Dev Dependencies
 dev_dependencies:
