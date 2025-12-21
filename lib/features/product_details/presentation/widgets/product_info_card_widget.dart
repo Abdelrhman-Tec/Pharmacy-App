@@ -8,7 +8,7 @@ import 'package:pharmacy_app/features/product_details/presentation/widgets/produ
 class ProductInfoCardWidget extends StatelessWidget {
   final String name;
   final String description;
-  final double price;
+  final String price;
 
   const ProductInfoCardWidget({
     super.key,
@@ -78,7 +78,7 @@ class ProductInfoCardWidget extends StatelessWidget {
                           ),
                           const Gap(4),
                           Text(
-                            '${price.toStringAsFixed(2)} ر.س',
+                            '$price جنيه ',
                             style: AppTextStyle.fontSize30WeightBold.copyWith(
                               color: AppColors.primaryGreen,
                             ),

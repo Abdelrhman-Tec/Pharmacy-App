@@ -25,14 +25,6 @@ extension Navigation on BuildContext {
   void pop() => Navigator.of(this).pop();
 }
 
-extension StringExtension on String? {
-  bool isNullOrEmpty() => this == null || this == "";
-}
-
-extension ListExtension<T> on List<T>? {
-  bool isNullOrEmpty() => this == null || this!.isEmpty;
-}
-
 /// Extension on String — for text formatting and validation
 extension StringX on String {
   // Capitalize the first letter
@@ -43,7 +35,7 @@ extension StringX on String {
   String get clean => replaceAll(RegExp(r'\s+'), ' ').trim();
 
   // Validate email format
-  bool get isEmail => RegExp(r'^[\w\.-]+@[\w\.-]+\.\w+$').hasMatch(this);
+  bool get isEmail => RegExp(r'^[\w.-]+@[\w.-]+\.\w+$').hasMatch(this);
 
   // Validate URL format
   bool get isUrl => Uri.tryParse(this)?.hasAbsolutePath ?? false;
@@ -71,6 +63,14 @@ extension DateTimeX on DateTime {
     if (diff.inMinutes > 0) return '${diff.inMinutes} minute(s) ago';
     return 'Just now';
   }
+}
+
+extension StringExtension on String? {
+  bool isNullOrEmpty() => this == null || this == "";
+}
+
+extension ListExtension<T> on List<T>? {
+  bool isNullOrEmpty() => this == null || this!.isEmpty;
 }
 
 /// Extension on Widget — for adding padding, margin, and visibility

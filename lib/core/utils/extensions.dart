@@ -17,7 +17,7 @@ extension StringExtension on String {
   /// Check if string is URL
   bool get isUrl {
     final urlRegex = RegExp(
-      r'^https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)$',
+      r'^https?://(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&/=]*)$',
     );
     return urlRegex.hasMatch(this);
   }
@@ -54,27 +54,10 @@ extension StringExtension on String {
   }
 }
 
-/// List extension methods
-extension ListExtension<T> on List<T> {
-  /// Check if list is null or empty
-  bool get isNullOrEmpty => isEmpty;
 
-  /// Get first element or null
-  T? get firstOrNull => isEmpty ? null : first;
-
-  /// Get last element or null
-  T? get lastOrNull => isEmpty ? null : last;
-
-  /// Chunk list into smaller lists
-  List<List<T>> chunk(int size) {
-    final chunks = <List<T>>[];
-    for (var i = 0; i < length; i += size) {
-      chunks.add(sublist(i, i + size > length ? length : i + size));
-    }
-    return chunks;
-  }
+extension ListExtension<T> on List<T>? {
+  bool isNullOrEmpty() => this == null || this!.isEmpty;
 }
-
 /// DateTime extension methods
 extension DateTimeExtension on DateTime {
   /// Check if date is today
@@ -174,3 +157,5 @@ extension DoubleExtension on double {
   /// Check if number is zero
   bool get isZero => this == 0;
 }
+
+

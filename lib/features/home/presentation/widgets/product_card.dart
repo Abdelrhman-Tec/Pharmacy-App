@@ -1,5 +1,6 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
+import 'package:pharmacy_app/core/helpers/fix_url_Image.cart.dart';
 import 'package:pharmacy_app/core/utils/app_colors.dart';
 import 'package:pharmacy_app/core/utils/app_text_style.dart';
 import 'package:pharmacy_app/features/home/presentation/widgets/index.dart';
@@ -52,8 +53,8 @@ class _ProductCardState extends State<ProductCard> {
                   borderRadius: .circular(15.r),
                 ),
                 child: Center(
-                  child: Image.asset(
-                    widget.imagePath,
+                  child: Image.network(
+                    fixImageUrl(widget.imagePath),
                     width: 100.w,
                     fit: .contain,
                   ),
@@ -69,13 +70,13 @@ class _ProductCardState extends State<ProductCard> {
                 ),
               ),
               const Gap(6),
-              Text(widget.quantity, style: AppTextStyle.fontSize14WeightNormal),
+              Text("الكمية  ${widget.quantity}", style: AppTextStyle.fontSize14WeightNormal),
               const Gap(6),
               Row(
                 mainAxisAlignment: .spaceBetween,
                 children: [
                   Text(
-                    widget.price,
+                    '${widget.price }  جنيه ',
                     style: AppTextStyle.fontSize14WeightNormal.copyWith(
                       color: AppColors.black,
                     ),

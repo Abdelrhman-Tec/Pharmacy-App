@@ -29,11 +29,7 @@ class ProfileBody extends StatelessWidget {
                 title: 'معلوماتي الشخصية',
                 onTap: () {},
               ),
-              ProfileMenuItem(
-                icon: Icons.location_on_outlined,
-                title: 'عناويني',
-                onTap: () {},
-              ),
+
               ProfileMenuItem(
                 icon: Icons.notifications_outlined,
                 title: 'الإشعارات',
@@ -71,11 +67,6 @@ class ProfileBody extends StatelessWidget {
           ProfileMenuSection(
             title: 'المساعدة والدعم',
             items: [
-              ProfileMenuItem(
-                icon: Icons.headset_mic_outlined,
-                title: 'الدعم الفني',
-                onTap: () {},
-              ),
               ProfileMenuItem(
                 icon: Icons.help_outline,
                 title: 'مركز المساعدة',

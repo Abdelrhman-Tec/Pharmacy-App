@@ -1,7 +1,5 @@
-import 'package:pharmacy_app/features/home/data/models/category_model.dart';
 import 'package:pharmacy_app/features/home/presentation/widgets/index.dart';
 import 'package:pharmacy_app/features/home/presentation/widgets/product_list_view.dart';
-import 'bannersListView.dart';
 
 class HomeBody extends StatelessWidget {
   const HomeBody({super.key});
@@ -16,9 +14,9 @@ class HomeBody extends StatelessWidget {
             const Gap(10),
             SectionTitle(title: S.current.categories).paddingSymmetric(h: 20),
             const Gap(10),
-            CategoryListView(categories: CategoryModel.categories),
+            CategoryListView(),
             const Gap(20),
-            BannersListView(),
+            // BannersListView(),
             const Gap(15),
             SectionTitle(title: S.current.products).paddingSymmetric(h: 20),
             const Gap(4),

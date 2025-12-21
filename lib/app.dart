@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pharmacy_app/core/constants/shared_pref_keys.dart';
 import 'package:pharmacy_app/core/routing/app_router.dart';
 import 'package:pharmacy_app/core/routing/routes.dart';
 import 'package:pharmacy_app/core/utils/app_colors.dart';
@@ -24,7 +25,7 @@ class PharmacyApp extends StatelessWidget {
             scaffoldBackgroundColor: AppColors.scaffoldBackground,
             textTheme: GoogleFonts.cairoTextTheme(),
           ),
-          initialRoute: AppRoutes.login,
+          initialRoute: isLoggedInUser ? AppRoutes.mainScreen : AppRoutes.login,
           onGenerateRoute: (settings) {
             return AppRouter().generateRoute(settings);
           },

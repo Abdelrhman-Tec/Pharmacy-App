@@ -1,10 +1,9 @@
 import 'package:json_annotation/json_annotation.dart';
-
-part 'products_model.g.dart';
+part 'products_response_model.g.dart';
 
 @JsonSerializable(createToJson: false)
-class ProductsModel {
-  ProductsModel({
+class ProductsResponseModel {
+  ProductsResponseModel({
     required this.statusCode,
     required this.message,
     required this.data,
@@ -15,8 +14,8 @@ class ProductsModel {
   final String? message;
   final List<ProductModel>? data;
 
-  factory ProductsModel.fromJson(Map<String, dynamic> json) =>
-      _$ProductsModelFromJson(json);
+  factory ProductsResponseModel.fromJson(Map<String, dynamic> json) =>
+      _$ProductsResponseModelFromJson(json);
 }
 
 @JsonSerializable(createToJson: false)

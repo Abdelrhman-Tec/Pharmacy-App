@@ -1,15 +1,19 @@
-import 'package:flutter_screenutil/flutter_screenutil.dart' show SizeExtension;
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pharmacy_app/core/utils/app_colors.dart';
-import 'package:pharmacy_app/features/home/presentation/widgets/index.dart';
 
 class ProductCounterWidget extends StatefulWidget {
   final int initialValue;
   final ValueChanged<int>? onChanged;
+  final int minValue;
+  final int? maxValue;
 
   const ProductCounterWidget({
     super.key,
     this.initialValue = 1,
     this.onChanged,
+    this.minValue = 1,
+    this.maxValue,
   });
 
   @override
@@ -22,16 +26,18 @@ class _ProductCounterWidgetState extends State<ProductCounterWidget> {
   @override
   void initState() {
     super.initState();
-    value = widget.initialValue;
+    value = widget.initialValue.clamp(widget.minValue, widget.maxValue ?? 9999);
   }
 
   void _increment() {
-    setState(() => value++);
-    widget.onChanged?.call(value);
+    if (widget.maxValue == null || value < widget.maxValue!) {
+      setState(() => value++);
+      widget.onChanged?.call(value);
+    }
   }
 
   void _decrement() {
-    if (value > 1) {
+    if (value > widget.minValue) {
       setState(() => value--);
       widget.onChanged?.call(value);
     }
@@ -48,7 +54,11 @@ class _ProductCounterWidgetState extends State<ProductCounterWidget> {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          _counterButton(Icons.remove_rounded, _decrement, value <= 1),
+          _counterButton(
+            Icons.remove_rounded,
+            _decrement,
+            value <= widget.minValue,
+          ),
           Container(
             constraints: BoxConstraints(minWidth: 45.w),
             padding: EdgeInsets.symmetric(horizontal: 16.w),
@@ -62,7 +72,11 @@ class _ProductCounterWidgetState extends State<ProductCounterWidget> {
               ),
             ),
           ),
-          _counterButton(Icons.add_rounded, _increment, false),
+          _counterButton(
+            Icons.add_rounded,
+            _increment,
+            widget.maxValue != null && value >= widget.maxValue!,
+          ),
         ],
       ),
     );

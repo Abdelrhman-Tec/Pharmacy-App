@@ -1,6 +1,7 @@
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
+import 'package:pharmacy_app/core/helpers/fix_url_Image.cart.dart';
 import 'package:pharmacy_app/core/utils/app_colors.dart';
 import 'package:photo_view/photo_view.dart';
 
@@ -36,7 +37,7 @@ class ProductImageWidget extends StatelessWidget {
                   children: [
                     PhotoView(
                       controller: controller,
-                      imageProvider: AssetImage(imagePath),
+                      imageProvider: NetworkImage(fixImageUrl(imagePath)),
                       minScale: PhotoViewComputedScale.contained,
                       maxScale: PhotoViewComputedScale.covered * 2,
                     ),
@@ -89,7 +90,7 @@ class ProductImageWidget extends StatelessWidget {
         child:
             ClipRRect(
                   borderRadius: BorderRadius.circular(14.r),
-                  child: Image.asset(imagePath, fit: BoxFit.cover),
+                  child: Image.network(fixImageUrl(imagePath), fit: BoxFit.cover),
                 )
                 .animate(delay: (0 * 100).ms)
                 .fadeIn(duration: 700.ms)

@@ -1,26 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
-import 'package:pharmacy_app/core/helpers/navigation.dart';
-import 'package:pharmacy_app/core/routing/routes.dart';
 import 'package:pharmacy_app/core/utils/app_colors.dart';
 import 'package:pharmacy_app/core/utils/app_text_style.dart';
+
+import '../../../../core/helpers/fix_url_Image.cart.dart';
 
 class CategoryItem extends StatelessWidget {
   final String title;
   final String image;
+  final VoidCallback ontap;
 
-  const CategoryItem({super.key, required this.title, required this.image});
+  const CategoryItem({super.key, required this.title, required this.image, required this.ontap});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        context.pushNamed(
-          AppRoutes.categoryScreen,
-          arguments: {'categoryTitle': title},
-        );
-      },
+      onTap: ontap,
       child: Container(
         width: 110.w,
         padding: EdgeInsets.all(8.w),
@@ -60,7 +56,7 @@ class CategoryItem extends StatelessWidget {
                     left: 0,
                     right: 0,
                     bottom: 0,
-                    child: Image.asset(image, fit: .contain),
+                    child: Image.network(fixImageUrl(image), fit: .contain),
                   ),
                 ],
               ),

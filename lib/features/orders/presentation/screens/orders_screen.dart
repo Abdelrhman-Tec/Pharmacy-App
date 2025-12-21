@@ -8,7 +8,7 @@ class OrdersScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: 'الطلبات'),
+      appBar: CustomAppBar(title: 'الطلبات',automaticallyImplyLeading: false),
       body: OrdersBody(),
     );
   }

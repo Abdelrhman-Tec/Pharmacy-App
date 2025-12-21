@@ -8,7 +8,7 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: 'الملف الشخصي'),
+      appBar: CustomAppBar(title: 'الملف الشخصي',automaticallyImplyLeading: false),
       body: ProfileBody(),
     );
   }

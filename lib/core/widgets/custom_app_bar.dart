@@ -10,6 +10,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Color? foregroundColor;
   final double elevation;
   final PreferredSizeWidget? bottom;
+  final bool? automaticallyImplyLeading;
 
   const CustomAppBar({
     super.key,
@@ -21,11 +22,13 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.foregroundColor,
     this.elevation = 0,
     this.bottom,
+    this.automaticallyImplyLeading,
   });
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      automaticallyImplyLeading: automaticallyImplyLeading ?? true,
       title: Text(
         title,
         style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
